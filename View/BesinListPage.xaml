@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ornek_2.View.BesinListPage"
+             Title="Besin Değerleri">
+    <SearchBar x:Name="MainSearch" SearchButtonPressed="SearchBar_SearchButtonPressed"></SearchBar>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="+" Command="{Binding InsertCommand}"/>
+    </ContentPage.ToolbarItems>
+    
+    <StackLayout>
+        <ListView ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Ad}" Detail="{Binding Aciklama}">
+                        <TextCell.ContextActions>
+                            <MenuItem x:Name="menuSil" Text="Sil" Clicked="MenuSil_Clicked" CommandParameter="{Binding .}"/>
+                            <MenuItem x:Name="menuGuncelle" Text="Düzenle" Clicked="MenuGuncelle_Clicked" CommandParameter="{Binding .}"/>
+                        </TextCell.ContextActions>
+                    </TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+    </StackLayout>
+    
+</ContentPage>

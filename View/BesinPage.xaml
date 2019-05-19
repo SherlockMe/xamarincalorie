@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ornek_2.View.BesinPage"
+             Title="Besin">
+    
+        <StackLayout>
+
+        <Entry Placeholder="Adı" Text="{Binding Ad}"/>
+        <Entry Placeholder="Açıklama" Text="{Binding Aciklama}"/>
+        <Entry Placeholder="Enerji" Text="{Binding Ener}"/>
+        <Entry Placeholder="Protein" Text="{Binding Protein}"/>
+        <Entry Placeholder="K.hidrat" Text="{Binding Khidrat}"/>
+        <Entry Placeholder="Kalsiyum" Text="{Binding Kalsiyum}"/>
+        <Entry Placeholder="Demir" Text="{Binding Demir}"/>
+
+
+        <StackLayout Orientation="Horizontal">
+            <Button x:Name="btnIptal" 
+                    Text="İptal"
+                    HorizontalOptions="FillAndExpand"
+                    Clicked="BtnIptal_Clicked"/>
+            <Button x:Name="btnTamam" 
+                    Text="Tamam"
+                    HorizontalOptions="FillAndExpand"
+                    Clicked="BtnTamam_Clicked"/>
+        </StackLayout>
+
+    </StackLayout>
+    
+</ContentPage>
